@@ -1,7 +1,5 @@
 // ASSESSMENT 2: Coding Practical Questions with Jest
 
-// const { describe } = require("yargs")
-
 // Please read all questions thoroughly
 // Pseudo coding is REQUIRED
 // If you get stuck, please leave comments to help us understand your thought process
@@ -18,6 +16,37 @@
 
 // Write a test using describe and expect statements that will show the expected outcome for each varible.
 
+// b) Create the function that makes the test pass.
+
+    // Psuedo Code:
+    
+    // Create a function that takes a number as an argument.
+
+    // Use the modulus tool to see if the remainder goes into 3 evenly.
+     
+    // Return a string literal because we need the variable which will pass into the function and onto the return statement.
+
+    // Red - funtcion was tested (RED) *divisibleByThree is not defined*
+    
+    // There was the proper red error for all expect statements (Red) -- After writing the function, there was another error that I figure out was caused by the backticks and quotes being switched.
+
+    // Tested again and it gave the proper (RED) good error again.
+
+    // ---------------- b.) Write a function that passes the test.
+
+    // The function will take in each variable, one at a time.
+
+    // Used the modulus sign to give us the remainder, if there is any.
+
+    // Look for an answer of true or false because it's a boolean value
+
+    // If number returns a remainder of 0, it is divisible by three. If there's another value remainding, it is not divisible by three.
+
+    // I went back and reviewed the code block, found I had put the single quotes outside of the return. Replaced with the correct `` marks (backticks) and now test runs (Green).
+
+    // Test is GREEN!
+
+// CODE:
 describe("Variable is or is not divisible by three", () => {
     
     var num1 = 15
@@ -32,7 +61,7 @@ describe("Variable is or is not divisible by three", () => {
     it("returns a string that says divisible by three or not divisible by three value", () => {
         // Use expect statements
         expect(divisibleByThree(num1)).toEqual("15 is divisible by three")
-                // There was the proper red error for all expect statements (GOOD) -- After writing the function, there was another error that said "expected 15..." "${num} is divisible by three" (not matching but I thought it was how you wrote it)
+                
         expect(divisibleByThree(num2)).toEqual("0 is divisible by three")
                 
         expect(divisibleByThree(num3)).toEqual("-7 is not divisible by three")
@@ -40,29 +69,58 @@ describe("Variable is or is not divisible by three", () => {
     })
 })
     
-// b) Create the function that makes the test pass.
-
-    // Write a function that passes the test. The function will take in each variable, one at a time. Used the modulus sign to give us the remainder, if any. If number returns a remainder of 0, it is divisible by three. If there's another value remainding, it is not divisible by three.
-    const divisibleByThree = (num) => {
-        return num % 3 === 0 ? `${num} is divisible by three` : `${num} is not divisible by three`
-    }
-        // I went back and reviewed the code block, found I had put the single quotes outside of the return. Replaced with the correct ``marks and now test runs green.
-
+const divisibleByThree = (num) => {
+    return num % 3 !== 0 ? `${num} is divisible by three` : `${num} is not divisible by three`
+}
+    
 
 // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
 
 // a) Create a test with expect statements for each of the variables provided.
 
-var randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
-// Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
-var randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deduction"]
-// Expected output: ["Temperature", "Database", "Chopsticks", "Mango", "Deduction"]
-
-
-
 // b) Create the function that makes the test pass.
 
+// ---------- b.)
+// Pseudo Code: Creat a function capitalized w/ the parameter of array
 
+// Define a new variable that will take an array and iterate through the values using .map()
+    //Return the value with the 1st index with .toUpperCase() - used the substring() to complete each string with lower case letters
+
+// return variable
+// Run the test using Jest
+
+describe("capitalized", () = {
+
+    var randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
+    // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
+
+    var randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deduction"]
+    // Expected output: ["Temperature", "Database", "Chopsticks", "Mango", "Deduction"]
+
+    // it("a function that takes in an array of words and returns an array with all the words capitalized.". () => 
+
+    it("a function that takes in an array of words and returns an array with all the words capitalized", () => {
+
+        // problem ---- Not sure why I am having an error. I've tried multiple ways to solve... I followed the same format for the describe and it statements. 1st - I commented out #1 problem, but it did not change the error. 2nd - checked for format errors, didn't catch any.
+
+        expect(capitalized(randomNouns1)).toEqual([
+            "Streetlamp",
+            "Potato",
+            "Teeth",
+            "Conclusion",
+            "Nephew",
+        ])
+        expect(capitalized(randomNouns2)).toEqual([
+            "Temperature",
+            "Database",
+            "Chopsticks",
+            "Mango",
+            "Deduction",
+        })
+
+    })      
+
+})
 
 // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 
